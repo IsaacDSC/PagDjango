@@ -17,4 +17,4 @@ class Client(models.Model):
     password = models.CharField(max_length = 220)
 
     def __str__(self):
-        return self.email
+        return self.name +'---\n'+self.email

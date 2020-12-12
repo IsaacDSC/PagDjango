@@ -45,4 +45,4 @@ def upload(req):
 
 
 def login(req):
-    return render(req, 'login.html')
+    return render(req, 'registration/login.html')
