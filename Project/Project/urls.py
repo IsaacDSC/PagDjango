@@ -1,4 +1,4 @@
-"""webPage URL Configuration
+"""Project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -13,11 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from blog.views import home
 from django.contrib import admin
 from django.urls import path
+from CRUD_App.views import (home, insert_products, admProducts, editing, searchEdit, upload, login)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name = 'home'),
+    path('insert/', insert_products, name = 'insert_products'),
+    path('edit/', admProducts, name = 'admEdit'),
+    path('searchEdit/', searchEdit, name = 'searchEdit'),
+    path('editing/', editing, name = 'editing'),
+    path('upload/', upload, name = 'upload'),
+    path('login/', login, name = 'login'),
 ]

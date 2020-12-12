@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/isaadsc/Público/PagDjango/myEnv"
+set -gx VIRTUAL_ENV "/home/isaadsc/Público/Django/myEnv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

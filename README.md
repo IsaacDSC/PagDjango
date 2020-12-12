@@ -25,12 +25,14 @@ Start Run Server
     python3 manage.py runserver
 
 Creating  primary model app
-    python3 manage.py startapp blog
+    python3 manage.py startapp 'nameApp'
 
 Register App creted in Settings.py in to Array INSTALLED_APPS
-    'blog',
+    'nome do App',
 
 Creating Class defined for Migrations in db
     python3 manage.py makemigrations
 
-
+dependencies for using bootrap form django
+    #pip install django-bootstrap-form
+    #include INSTALLED_APPS = ['bootstrapform',]
