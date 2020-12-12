@@ -46,3 +46,4 @@ def upload(req):
 
 def login(req):
     return render(req, 'registration/login.html')
+
