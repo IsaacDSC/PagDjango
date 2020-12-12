@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product
+from .models import (Product, Client)
 from .forms import (ProductForm)
 
 def home(req):
@@ -46,4 +46,3 @@ def upload(req):
 
 def login(req):
     return render(req, 'login.html')
-

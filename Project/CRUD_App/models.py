@@ -8,3 +8,13 @@ class Product(models.Model):
 
         def __str__(self):
             return self.description
+
+
+class Client(models.Model):
+    name = models.CharField(max_length = 60)
+    telephone = models.IntegerField()
+    email = models.CharField(max_length = 120)
+    password = models.CharField(max_length = 220)
+
+    def __str__(self):
+        return self.email

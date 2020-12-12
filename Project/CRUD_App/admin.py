@@ -1,4 +1,10 @@
 from django.contrib import admin
-from .models import Product
+from .models import (Product, Client)
 
-admin.site.register(Product)
+MODELOS = [Product, Client]
+
+# admin.site.register(Product)
+# admin.site.register(Client)
+
+for MODELO in MODELOS:
+    admin.site.register(MODELO)

@@ -26,4 +26,5 @@ urlpatterns = [
     path('editing/', editing, name = 'editing'),
     path('upload/', upload, name = 'upload'),
     path('login/', login, name = 'login'),
+
 ]
