@@ -1,6 +1,15 @@
 from django.contrib import admin
 from django.urls import include, path
-from CRUD_App.views import (home, insert_products, admProducts, editing, searchEdit, upload, login, register)
+from CRUD_App.views import (
+    home,
+    insert_products,
+    admProducts,
+    editing,
+    searchEdit,
+    upload,
+    # login,
+    # register,
+    )
 
 
 urlpatterns = [
@@ -12,8 +21,9 @@ urlpatterns = [
     path('searchEdit/', searchEdit, name = 'searchEdit'),
     path('editing/', editing, name = 'editing'),
     path('upload/', upload, name = 'upload'),
-    path('accounts/login/', login, name = 'login'),
-    path('accounts/register/',  register, name = 'register'),
 ]
 
 #accounts/signup/
+#{% url 'account_logout' %} sair
+#{% url 'account_login' %}  login
+#{% url 'account_signup' %} register

@@ -1,0 +1,31 @@
+{% extends 'layouts/accounts.html' %}
+{% load crispy_forms_tags %}
+
+{% block layoutAccounts %}
+<div class="container mt-5">
+    <div class="card">
+    <div class="card-body">
+            <h1 class="text-center">Registre-se Agora</h1>
+            <hr>
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <button class="btn btn-primary col-12" type="submit">Cadastrar</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="container mt-3">
+                        <p>
+                            Já possui uma conta? <a href="" class="mt-3">Ir ao Login</a>
+                        </p>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
