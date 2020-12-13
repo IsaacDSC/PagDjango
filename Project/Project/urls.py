@@ -7,7 +7,8 @@ from CRUD_App.views import (
     editing,
     searchEdit,
     upload,
-    Contact_Us,
+    contact_us,
+    list_contact_us,
     # login,
     # register,
     )
@@ -22,7 +23,8 @@ urlpatterns = [
     path('searchEdit/', searchEdit, name = 'searchEdit'),
     path('editing/', editing, name = 'editing'),
     path('upload/', upload, name = 'upload'),
-    path('contact/', Contact_Us, name = 'contact')
+    path('contact/', contact_us, name = 'contact'),
+    path('contacts/', list_contact_us, name = 'list_contacts'),
 ]
 
 #accounts/signup/

@@ -44,7 +44,7 @@ def upload(req):
     return render(req, 'formUpload.html')
 
 
-def Contact_Us(req):
+def contact_us(req):
     if req.method == 'GET':
         form = Contact_Us_form
         return render(req, 'contact.html', {'form': form})
@@ -55,7 +55,10 @@ def Contact_Us(req):
             return redirect('home')
 
 
-
+def list_contact_us(req):
+    contact = Contact_Us.objects.all()
+    print(contact)
+    return render(req, 'listContact.html', {'contacts': contact})
 
 # def login(req):
 #     return render(req, 'account/login.html')
