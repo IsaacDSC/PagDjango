@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import (Product, Client)
-from .forms import (ProductForm)
+from .forms import (ProductForm, RegisterClient)
 
 def home(req):
     products = Product.objects.all()
@@ -47,3 +47,14 @@ def upload(req):
 def login(req):
     return render(req, 'registration/login.html')
 
+def register(req):
+    if req.method == 'POST':
+        form = RegisterClient(req.POST or None)
+        pwd = req.POST['password']
+
+        # if form.is_valid():
+        #     form.save()
+        # return redirect('home')
+
+    form = RegisterClient()
+    return render(req, 'register.html', {'form': form})

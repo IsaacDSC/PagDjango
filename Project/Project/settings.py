@@ -21,14 +21,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'CRUD_App',
     'bootstrapform',
+    # 3rd allauth party
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
 ]
 
 MIDDLEWARE = [
@@ -123,6 +130,14 @@ STATICFILES_DIRS = [
 # print(BASE_DIR)
 # print(STATICFILES_DIRS)
 
-LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = '/accounts/login'
+#LOGOUT_REDIRECT_URL = '/accounts/login'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'

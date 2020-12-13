@@ -1,5 +1,5 @@
-{% load static %}
 {% load bootstrap %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,25 +12,28 @@
 </head>
 
 <body>
-    {% include 'partials/nav.html' %}
-
+    {% include 'partials/msg.html' %}
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
-                <h1>Formulário</h1>
+                <h1>Registre-se Agora!</h1>
                 <hr>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{form|bootstrap }}
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <button class="btn btn-success mt-2 col-12">Enviar</button>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-
-                </form>
+                <div class="row">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {{form|bootstrap}}
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col"></div>
+                          <div class="col">
+                              <button class="btn btn-success col-12">Cadastrar</button>
+                          </div>
+                          <div class="col"></div>
+                      </div>
+                      <a href="{% url 'login' %}">Já tenho uma Conta</a>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
