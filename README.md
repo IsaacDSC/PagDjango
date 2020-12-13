@@ -36,3 +36,7 @@ Creating Class defined for Migrations in db
 dependencies for using bootrap form django
     #pip install django-bootstrap-form
     #include INSTALLED_APPS = ['bootstrapform',]
+
+denpendecies login/register/logout from django
+    #pip install django-crispy-forms
+    #include INSTALLED_APPS = ['cruspy_forms',]

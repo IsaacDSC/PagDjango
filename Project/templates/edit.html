@@ -24,7 +24,7 @@
                     {% for product in products %}
                     <div class="col-4">
                         <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="{{product.id}}">
+                            <img src="{% static 'public/img/cell.png' %}" class="card-img-top" alt="{{product.id}}">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{product.name}}</h5>
                                 <p class="card-text"><strong>{{product.description}}</strong><br> quick example
