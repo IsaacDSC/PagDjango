@@ -18,3 +18,14 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name +'---\n'+self.email
+
+
+class Contact_Us(models.Model):
+    name = models.CharField(max_length = 80)
+    telephone = models.IntegerField()
+    email = models.CharField(max_length = 220)
+    subject = models.CharField(max_length = 120)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name + '------'+ self.subject

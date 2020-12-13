@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import (Product, Client)
-from .forms import (ProductForm, RegisterClient)
+from .models import (Product, Client, Contact_Us)
+from .forms import (ProductForm, RegisterClient, Contact_Us_form)
 
 def home(req):
     products = Product.objects.all()
@@ -42,6 +42,19 @@ def editing(req):
 
 def upload(req):
     return render(req, 'formUpload.html')
+
+
+def Contact_Us(req):
+    if req.method == 'GET':
+        form = Contact_Us_form
+        return render(req, 'contact.html', {'form': form})
+    if req.method == 'POST':
+        form = Contact_Us_form(req.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+
 
 
 # def login(req):
