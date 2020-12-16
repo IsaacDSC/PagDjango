@@ -21,7 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #django apps
+    # django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # django-login-required-middleware
+    # 'login_required.middleware.LoginRequiredMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'Project.urls'
@@ -126,7 +129,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR,'/templates/')
+    os.path.join(BASE_DIR, '/templates/')
 ]
 # print(BASE_DIR)
 # print(STATICFILES_DIRS)
@@ -143,10 +146,10 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 
-#Savar a Sessão por DEFAULT
+# Savar a Sessão por DEFAULT
 #ACCOUNT_SESSION_REMEMBER = True
 
-#Verifica se o EMAIL existe ou não ENVIANDO COD de confirmação
+# Verifica se o EMAIL existe ou não ENVIANDO COD de confirmação
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # Só precisa digitar a senha uma vez
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
@@ -160,5 +163,28 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 
-#django cruspy_forms
+# django cruspy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
+    'home',
+    'login',
+    'contact',
+    'admin',
+    'admin:index',
+    'admin:login',
+    'accounts',
+]
+
+LOGIN_REQUIRED_IGNORE_VIEW_URL = [
+    'accounts/signup/,'
+
+]
+# LOGIN_REQUIRED_IGNORE_PATHS = [
+#     r'/accounts/logout/$'
+#     r'/accounts/signup/$',
+#     r'/admin/$',
+#     r'/admin/login/$',
+#     r'/about/$'
+#     r'/account_signup/$'
+# ]

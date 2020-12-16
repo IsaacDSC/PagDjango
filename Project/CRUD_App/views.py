@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import (Product, Client, Contact_Us)
 from .forms import (ProductForm, RegisterClient, Contact_Us_form)
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def home(req):
     products = Product.objects.all()
@@ -60,6 +61,12 @@ def list_contact_us(req):
     print(contact)
     return render(req, 'listContact.html', {'contacts': contact})
 
+
+def register(req):
+    return render(req,'account/signup.html')
+
+#     form = RegisterClient()
+#     return render(req, 'register.html', {'form': form})
 # def login(req):
 #     return render(req, 'account/login.html')
 

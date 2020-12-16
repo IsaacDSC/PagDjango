@@ -9,15 +9,16 @@ from CRUD_App.views import (
     upload,
     contact_us,
     list_contact_us,
+    register,
     # login,
     # register,
     )
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', home, name = 'home'),
+    path('admin/', admin.site.urls, name = 'admin'),
+    path('accounts/', include('allauth.urls'), name = 'accounts'),
+    path('',  home, name = 'home'),
     path('insert/', insert_products, name = 'insert_products'),
     path('edit/', admProducts, name = 'admEdit'),
     path('searchEdit/', searchEdit, name = 'searchEdit'),
@@ -25,9 +26,10 @@ urlpatterns = [
     path('upload/', upload, name = 'upload'),
     path('contact/', contact_us, name = 'contact'),
     path('contacts/', list_contact_us, name = 'list_contacts'),
+    path('accounts/signup/', register, name = 'signup')
 ]
 
 #accounts/signup/
 #{% url 'account_logout' %} sair
 #{% url 'account_login' %}  login
-#{% url 'account_signup' %} register
+#{% url 'account_signup' %} register URL = /accounts/signup/
