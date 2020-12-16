@@ -40,3 +40,8 @@ dependencies for using bootrap form django
 denpendecies login/register/logout from django
     #pip install django-crispy-forms
     #include INSTALLED_APPS = ['cruspy_forms',]
+
+
+add django-login-required-middleware
+    #pip install django-login-required-middleware
+    documnentation: https://pypi.org/project/django-login-required-middleware/
